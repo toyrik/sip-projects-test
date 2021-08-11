@@ -19,4 +19,5 @@ docker-build:
 
 app-init:
 	docker-compose run --rm php-cli composer install
-	docker-compose run --rm php-cli chmod 777 -R storage/logs storage/framework/sessions
+	docker-compose run --rm php-cli chown root:www-data -R storage/
+	docker-compose run --rm php-cli chmod 775 -R storage/
