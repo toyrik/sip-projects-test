@@ -51,5 +51,7 @@ $app->singleton(
 | from the actual running of the application and sending responses.
 |
 */
+$envFile = $_SERVER['HTTP_HOST'] == 'localhost:8000' ? '.env.docker' : '.env';
+$app->loadEnvironmentFrom($envFile);
 
 return $app;
