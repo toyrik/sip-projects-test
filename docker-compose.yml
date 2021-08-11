@@ -19,3 +19,10 @@ services:
       dockerfile: php-fpm.docker
     volumes:
       - ./src:/src
+
+  php-cli:
+    build:
+      context: ./docker/
+      dockerfile: php-cli.docker
+    volumes:
+      - ./src:/src

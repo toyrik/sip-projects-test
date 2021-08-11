@@ -1,6 +1,6 @@
 up: docker-up
 down: docker-down
-init: docker-down-clear docker-pull docker-build docker-up
+init: docker-down-clear docker-pull docker-build docker-up app-init
 
 docker-up:
 	docker-compose up -d
@@ -16,3 +16,7 @@ docker-pull:
 
 docker-build:
 	docker-compose build
+
+app-init:
+	docker-compose run --rm php-cli composer install
+	docker-compose run --rm php-cli chmod 777 -R storage/logs storage/framework/sessions
