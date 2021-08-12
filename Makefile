@@ -1,6 +1,6 @@
 up: docker-up
 down: docker-down
-init: docker-down-clear docker-pull docker-build docker-up app-init
+init: docker-down-clear docker-pull docker-build docker-up app-init mysql-init
 
 docker-up:
 	docker-compose up -d
@@ -21,3 +21,4 @@ app-init:
 	docker-compose run --rm php-cli composer install
 	docker-compose run --rm php-cli chown root:www-data -R storage/
 	docker-compose run --rm php-cli chmod 775 -R storage/
+	docker-compose run --rm php-cli cp .env.docker .env
