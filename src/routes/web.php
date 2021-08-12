@@ -15,3 +15,4 @@ use App\Http\Controllers\FileController;
 */
 
 Route::get('/', [FileController::class, 'list'])->name('home');
+Route::post('saveFile', [FileController::class, 'upload']);

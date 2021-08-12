@@ -1,6 +1,6 @@
 up: docker-up
 down: docker-down
-init: docker-down-clear docker-pull docker-build docker-up app-init mysql-init
+init: docker-down-clear docker-pull docker-build docker-up app-init
 
 docker-up:
 	docker-compose up -d
