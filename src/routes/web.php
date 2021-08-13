@@ -15,4 +15,5 @@ use App\Http\Controllers\FileController;
 */
 
 Route::get('/', [FileController::class, 'list'])->name('home');
-Route::post('saveFile', [FileController::class, 'upload']);
+Route::post('upload', [FileController::class, 'upload']);
+Route::get('download', [FileController::class, 'download'])->name('download');
